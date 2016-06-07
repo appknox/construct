@@ -9,20 +9,20 @@ HERE = os.path.dirname(__file__)
 exec(open(os.path.join(HERE, "construct", "version.py")).read())
 
 setup(
-    name = "construct",
+    name = "ak-construct",
     version = version_string, #@UndefinedVariable
     packages = [
         'construct',
-        'construct.lib', 
-        'construct.formats', 
-        'construct.formats.data', 
-        'construct.formats.executable', 
-        'construct.formats.filesystem', 
+        'construct.lib',
+        'construct.formats',
+        'construct.formats.data',
+        'construct.formats.executable',
+        'construct.formats.filesystem',
         'construct.formats.graphics',
-        'construct.protocols', 
-        'construct.protocols.application', 
-        'construct.protocols.layer2', 
-        'construct.protocols.layer3', 
+        'construct.protocols',
+        'construct.protocols.application',
+        'construct.protocols.layer2',
+        'construct.protocols.layer3',
         'construct.protocols.layer4',
     ],
     license = "MIT",
