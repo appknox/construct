@@ -233,7 +233,10 @@ class CStringAdapter(StringAdapter):
         StringAdapter.__init__(self, subcon, encoding = encoding)
         self.terminators = terminators
     def _encode(self, obj, context):
-        return StringAdapter._encode(self, obj, context) + self.terminators[0:1]
+        _e = StringAdapter._encode(self, obj, context)
+        if isinstance(_e, str):
+            _e = _e.encode()
+        return _e + self.terminators[0:1]
     def _decode(self, obj, context):
         return StringAdapter._decode(self, six.b('').join(obj[:-1]), context)
 
